@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 60% 97%;
+    --foreground: 340 30% 20%;
+
+    --card: 340 50% 95%;
+    --card-foreground: 340 30% 20%;
+
+    --popover: 340 60% 97%;
+    --popover-foreground: 340 30% 20%;
+
+    --primary: 340 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 40% 90%;
+    --secondary-foreground: 340 30% 25%;
+
+    --muted: 340 30% 92%;
+    --muted-foreground: 340 15% 50%;
+
+    --accent: 20 80% 80%;
+    --accent-foreground: 20 50% 25%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 40% 88%;
+    --input: 340 40% 88%;
+    --ring: 340 70% 65%;
+
+    --radius: 1rem;
+
+    --table-available: 150 50% 70%;
+    --table-booked: 0 65% 65%;
+    --chat-bubble: 340 50% 92%;
+    --chat-user: 210 50% 90%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Sarabun', sans-serif;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* =========================================
+   คาถาเสกน้องเมดให้ขยับได้ (Maid Animations)
+   ========================================= */
+
+/* 1. ท่าปกติ (ลอยหายใจขึ้นลงเบาๆ) */
+@keyframes breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* 2. ท่าโกรธ (สั่นรัวๆ แบบหัวร้อน) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px) rotate(-2deg); }
+  50% { transform: translateX(4px) rotate(2deg); }
+  75% { transform: translateX(-4px) rotate(-2deg); }
+}
+.animate-shake {
+  animation: shake 0.4s ease-in-out infinite;
+}
+
+/* 3. ท่าเขิน (ย่อขยาย/เอียงตัวนิดๆ) */
+@keyframes shy-bounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(2deg); }
+}
+.animate-shy {
+  animation: shy-bounce 2s ease-in-out infinite;
+}
+
+/* 4. ท่าร้องไห้ (ตัวสั่นเบาๆ หงอยๆ) */
+@keyframes sob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+.animate-sob {
+  animation: sob 2s ease-in-out infinite;
+}
